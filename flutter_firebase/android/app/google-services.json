@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752935498000",
+    "project_id": "praktikum-pbm-123",
+    "storage_bucket": "praktikum-pbm-123.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752935498000:android:4df023cc5ee01bf1df3595",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClo3v5Y-xkLmSffD2Bmzeip0_PgKZ27UI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
