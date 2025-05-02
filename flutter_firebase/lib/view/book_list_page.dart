@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/models/book_model.dart';
 import 'package:flutter_firebase/services/book_service.dart';
+import 'package:flutter_firebase/view/book_edit_page.dart';
 import 'book_create_view.dart';
 
 class BookView extends StatefulWidget {
@@ -41,9 +42,26 @@ class _BookViewState extends State<BookView> {
           return ListTile(
             title: Text(book.title ?? ''),
             subtitle: Text(book.description ?? ''),
-            trailing: IconButton(
-              icon: const Icon(Icons.delete, color: Colors.red),
-              onPressed: () => deleteBook(book.id!),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.edit, color: Colors.blue),
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => BookEditView(book: book),
+                      ),
+                    );
+                    fetchBooks(); 
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.delete, color: Colors.red),
+                  onPressed: () => deleteBook(book.id!),
+                ),
+              ],
             ),
           );
         },
@@ -55,7 +73,7 @@ class _BookViewState extends State<BookView> {
             context,
             MaterialPageRoute(builder: (_) => const BookCreateView()),
           );
-          fetchBooks(); // Refresh after return
+          fetchBooks(); 
         },
       ),
     );
